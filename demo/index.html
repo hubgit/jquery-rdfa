@@ -1,0 +1,51 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>jQuery RDFa Example</title>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.js"></script>
+<script src="../jquery.rdfa.js"></script>
+<script src="demo.js"></script>
+
+<style>
+  body { font-family: sans-serif; }
+  table { border-collapse: collapse; border: 1px solid #777; margin: 5px 0; }
+  th { text-align: left; }
+  th, td { vertical-align: top; padding: 2px 5px; }
+</style>
+
+<h1>jQuery RDFa demonstration</h1>
+
+<h2>HTML</h2>
+
+<ol id="albumlist">
+  <li typeof="http://schema.org/MusicAlbum">
+    <span property="byArtist" typeof="http://schema.org/MusicGroup">
+      <a property="url" href="spotify:search:artist:Jesu">
+        <span property="name">Jesu</span></a></span>
+    and
+    <span property="byArtist" typeof="http://schema.org/MusicGroup">
+      <a property="url" href="spotify:search:artist:Jesu">
+        <span property="name">Jesu Two</span></a></span>
+    -
+    <a property="url" href="spotify:search:artist:Jesu+album:Everyday+I+Get+Closer+To+The+Light">
+      <span property="name">Everyday I Get Closer To The Light</span></a>
+  </li>
+  <li typeof="http://schema.org/MusicAlbum">
+    <span property="byArtist" typeof="http://schema.org/MusicGroup">
+      <a property="url" href="spotify:search:artist:Deafheaven">
+        <span property="name">Deafheaven</span> aka <span property="name">Deaf Heaven</span></a>
+    </span>
+    -
+    <a property="url" href="spotify:search:artist:Deafheaven+album:Sunbather">
+      <span property="name">Sunbather</span></a>
+  </li>
+</ol>
+
+<h2>property() / value() / values()</h2>
+<table id="properties"></table>
+
+<h2>values()</h2>
+<pre id="metadata"></pre>
+
+<h2>values(expanded)</h2>
+<pre id="metadata-expanded"></pre>
